@@ -13,7 +13,7 @@ namespace EnrollmentSystem
 {
     public partial class Form1 : Form
     {
-        string connectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\"\\\\Server2\\second semester 2023-2024\\LAB802\\79286_CC_APPSDEV22_1030_1230_PM_MW\\79286-23213218\\Desktop\\Finals\\LorejasF.accdb\"";
+        string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Fritz Dolly\Desktop\Appsdev-main\Finals\LorejasF.accdb";
         public Form1()
         {
             InitializeComponent();
@@ -21,30 +21,90 @@ namespace EnrollmentSystem
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
+
+            // Check if any of the required text boxes are empty
+            if (String.IsNullOrWhiteSpace(SubjectcodeTbox.Text) ||
+                String.IsNullOrWhiteSpace(DescriptionTbox.Text) ||
+                String.IsNullOrWhiteSpace(UnitsTbox.Text) ||
+                String.IsNullOrWhiteSpace(OfferingCbox.Text) ||
+                String.IsNullOrWhiteSpace(CategoryCbox.Text) ||
+                String.IsNullOrWhiteSpace(CourseCbox.Text) ||
+                String.IsNullOrWhiteSpace(CurriculumYearTbox.Text))
+            {
+                MessageBox.Show("Please fill up before saving");
+                return; // Exit the method if validation fails
+            }
+
+            // Validate UnitsTbox to ensure it contains only numbers
+            if (!int.TryParse(UnitsTbox.Text, out int units))
+            {
+                MessageBox.Show("Please enter a number only in the Units field");
+                return; // Exit the method if validation fails
+            }
+
            
-            OleDbConnection thisConnection= new OleDbConnection(connectionString);
-            string Ole = "Select * From SubjectFile";
+
+            try
+            {
+                OleDbConnection thisConnection = new OleDbConnection(connectionString);
+                string Ole = "Select * From SubjectFile";
+                OleDbDataAdapter thisAdapter = new OleDbDataAdapter(Ole, thisConnection);
+                OleDbCommandBuilder thisBuilder = new OleDbCommandBuilder(thisAdapter);
+                DataSet thisDataSet = new DataSet();
+                thisAdapter.Fill(thisDataSet, "SubjectFile");
+
+                DataRow thisRow = thisDataSet.Tables["SubjectFile"].NewRow();
+                thisRow["SFSUBJCODE"] = SubjectcodeTbox.Text;
+                thisRow["SFSUBJDESC"] = DescriptionTbox.Text;
+                thisRow["SFSUBJUNITS"] = units.ToString(); // Using the validated units value
+                thisRow["SFSUBJREGOFRNG"] = OfferingCbox.Text.Substring(0, 1);
+                thisRow["SFSUBJCATEGORY"] = CategoryCbox.Text.Substring(0, 1);
+                thisRow["SFSUBJSTATUS"] = "AC";
+                thisRow["SFSUBJCOURSECODE"] = CourseCbox.Text;
+                thisRow["SFSUBJCURRCODE"] = CurriculumYearTbox.Text; // Using the validated curriculum year value
+
+                thisDataSet.Tables["SubjectFile"].Rows.Add(thisRow);
+                thisAdapter.Update(thisDataSet, "SubjectFile");
+
+                // Check if Req method needs to be called based on PreRb, CoRb, and ScodeTbox conditions
+                if ((PreRb.Checked || CoRb.Checked) && !string.IsNullOrWhiteSpace(ScodeTbox.Text))
+                {
+                    Req();
+                }
+
+                MessageBox.Show("Recorded");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred: " + ex.Message);
+            }
+        }
+
+        public void Req()
+        {
+            OleDbConnection thisConnection = new OleDbConnection(connectionString);
+            string Ole = "Select * From SubjectPreqFile";
             OleDbDataAdapter thisAdapter = new OleDbDataAdapter(Ole, thisConnection);
             OleDbCommandBuilder thisBuilder = new OleDbCommandBuilder(thisAdapter);
             DataSet thisDataSet = new DataSet();
-            thisAdapter.Fill(thisDataSet, "SubjectFile");
 
-            DataRow thisRow = thisDataSet.Tables["SubjectFile"].NewRow();
-            thisRow["SFSUBJCODE"] = Convert.ToInt16(SubjectcodeTbox.Text);
-            thisRow["SFSUBJDESC"] = DescriptionTbox.Text;
-            thisRow["SFSUBJUNITS"] = UnitsTbox.Text;
-            thisRow["SFSUBJREGOFRNG"] = OfferingCbox.Text.Substring(0, 1);
-            thisRow["SFSUBJCATEGORY"] = CategoryCbox.Text.Substring(0, 1);
-            thisRow["SFSUBJSTATUS"] = "AC";
-            thisRow["SFSUBJCOURSECODE"] = CourseCbox.Text;
-            thisRow["SFSUBJCURRCODE"] = CurriculumYearTbox.Text;
+            thisAdapter.Fill(thisDataSet, "SubjectPreqFile");
 
-            thisDataSet.Tables["SubjectFile"].Rows.Add(thisRow);
-            thisAdapter.Update(thisDataSet, "SubjectFile");
+            DataRow thisRow = thisDataSet.Tables["SubjectPreqFile"].NewRow();
+            thisRow["SUBJCODE"] = SubjectcodeTbox.Text;
+            thisRow["SUBJPRECODE"] = ScodeTbox.Text;
 
-            MessageBox.Show("Recorded");
+            if (PreRb.Checked)
+                thisRow["SUBJCATEGORY"] = "PR";
+            else
+                thisRow["SUBJCATEGORY"] = "CR";
+
+
+            thisDataSet.Tables["SubjectPreqFile"].Rows.Add(thisRow);
+            thisAdapter.Update(thisDataSet, "SubjectPreqFile");
 
         }
+
 
         private void ScodeTbox_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -78,15 +138,60 @@ namespace EnrollmentSystem
                     }
                 }
                 if (found == false)
-                    MessageBox.Show("Sunject Code Not Found");
+                    MessageBox.Show("Subject Code Not Found");
                 else 
                 {
                     SubjectDataGridView.Rows[0].Cells[0].Value = subjectCode;
-                    SubjectDataGridView.Rows[0].Cells[0].Value = description;
-                    SubjectDataGridView.Rows[0].Cells[0].Value = units;
+                    SubjectDataGridView.Rows[0].Cells[1].Value = description;
+                    SubjectDataGridView.Rows[0].Cells[2].Value = units;
 
+                }
+
+                OleDbConnection requisiteConnection = new OleDbConnection(connectionString);
+                requisiteConnection.Open();
+                OleDbCommand requisiteCommand = requisiteConnection.CreateCommand();
+
+                string requisitesql = "Select * From SubjectPreqFile";
+                requisiteCommand.CommandText = requisitesql;
+
+                OleDbDataReader requisiteDataReader = requisiteCommand.ExecuteReader();
+                while (requisiteDataReader.Read())
+                {
+                    if (requisiteDataReader["SUBJCODE"].ToString().Trim().ToUpper() == ScodeTbox.Text.Trim().ToUpper())
+                    {
+                        SubjectDataGridView.Rows[0].Cells[3].Value = requisiteDataReader["SUBJPRECODE"].ToString().Trim().ToUpper();
+                        break;
+                    }
+                    else
+                        SubjectDataGridView.Rows[0].Cells[3].Value = string.Empty;
                 }
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Menu form = new Menu();
+            form.Show();
+            this.Hide();
+        }
+
+        private void CancelButton_Click(object sender, EventArgs e)
+        {
+            SubjectcodeTbox.Text = null;
+            DescriptionTbox.Text = null;
+            UnitsTbox.Text = null;
+            CourseCbox.Text = null;
+            CurriculumYearTbox.Text = null;
+            OfferingCbox.Text = null;
+            CourseCbox.Text= null;
+            ScodeTbox.Text= null;
+            
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+        
     }
 }

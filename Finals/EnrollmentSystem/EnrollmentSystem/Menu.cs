@@ -16,5 +16,26 @@ namespace EnrollmentSystem
         {
             InitializeComponent();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            SubjectScheduleForm subjectScheduleForm = new SubjectScheduleForm();
+            subjectScheduleForm.Show();
+            Hide();
+        }
+
+        private void SubjectEntryButton_Click(object sender, EventArgs e)
+        {
+            Form1 form1 = new Form1();
+            form1.Show();
+            Hide();
+        }
+
+        private void EnrollmentEntryButton_Click(object sender, EventArgs e)
+        {
+            EnrollmentEntryForm enrollmentEntryForm = new EnrollmentEntryForm();
+            enrollmentEntryForm.Show();
+            Hide();
+        }
     }
 }

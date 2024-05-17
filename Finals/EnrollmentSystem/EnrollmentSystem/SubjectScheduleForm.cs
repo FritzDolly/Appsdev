@@ -13,7 +13,7 @@ namespace EnrollmentSystem
 {
     public partial class SubjectScheduleForm : Form
     {
-        string connectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\"\\\\Server2\\second semester 2023-2024\\LAB802\\79286_CC_APPSDEV22_1030_1230_PM_MW\\79286-23213218\\Desktop\\Finals\\LorejasF.accdb\"";
+        string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Fritz Dolly\Desktop\Appsdev-main\Finals\LorejasF.accdb";
 
         public SubjectScheduleForm()
         {
@@ -22,30 +22,120 @@ namespace EnrollmentSystem
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
+            // Validate EdpcodeTbox to ensure it contains only numbers
+            if (!System.Text.RegularExpressions.Regex.IsMatch(EdpcodeTbox.Text, @"^\d+$"))
+            {
+                MessageBox.Show("Please enter numbers only in the EDP Code field");
+                return; // Exit the method if validation fails
+            }
 
-            OleDbConnection thisConnection = new OleDbConnection(connectionString);
-            string Ole = "Select * From SubjectFile";
-            OleDbDataAdapter thisAdapter = new OleDbDataAdapter(Ole, thisConnection);
-            OleDbCommandBuilder thisBuilder = new OleDbCommandBuilder(thisAdapter);
-            DataSet thisDataSet = new DataSet();
-            thisAdapter.Fill(thisDataSet, "SubjectFile");
+            // Validate RoomTbox to ensure it contains only numbers
+            if (!System.Text.RegularExpressions.Regex.IsMatch(RoomTbox.Text, @"^\d+$"))
+            {
+                MessageBox.Show("Please enter numbers only in the Room field");
+                return; // Exit the method if validation fails
+            }
 
-            DataRow thisRow = thisDataSet.Tables["SubjectFile"].NewRow();
-            thisRow["SSFEDPCODE"] = Convert.ToInt16(SubjectcodeTbox.Text);
-            thisRow["SSFSUBJCODE"] = SubjectcodeTbox.Text;
-            thisRow["SSFSTARTTIME"] = StarttimedateTimePicker.Text;
-            thisRow["SSFENDTIME"] = EndtimedateTimePicker.Text.Substring(0, 1);
-            thisRow["SSFDAYS"] = DaysTbox.Text.Substring(0, 1);
-            thisRow["SSFROOM"] = RoomTbox.Text;
-            thisRow["SSFMAXSIZE"] = RoomTbox.Text;
-            thisRow["SSFCLASSSIZE"] = RoomTbox.Text;
-            thisRow["SFSUBJREGOFRING"]= AmpmCbox.Text;
-           
+            try
+            {
+                OleDbConnection thisConnection = new OleDbConnection(connectionString);
+                string Ole = "Select * From SubjectScheduleEntry";
+                OleDbDataAdapter thisAdapter = new OleDbDataAdapter(Ole, thisConnection);
+                OleDbCommandBuilder thisBuilder = new OleDbCommandBuilder(thisAdapter);
+                DataSet thisDataSet = new DataSet();
+                thisAdapter.Fill(thisDataSet, "SubjectScheduleEntry");
 
-            thisDataSet.Tables["SubjectFile"].Rows.Add(thisRow);
-            thisAdapter.Update(thisDataSet, "SubjectScheduleFile");
+                DataRow thisRow = thisDataSet.Tables["SubjectScheduleEntry"].NewRow();
+                thisRow["SSFEDPCODE"] = EdpcodeTbox.Text;
+                thisRow["SSFSUBJCODE"] = SubjectcodeTbox.Text;
+                thisRow["SSFSTARTTIME"] = StarttimedateTimePicker.Text;
+                thisRow["SSFENDTIME"] = EndtimedateTimePicker.Text;
+                thisRow["SSFDAYS"] = DaysTbox.Text;
+                thisRow["SSFROOM"] = RoomTbox.Text;
+                thisRow["SSFSECTION"] = SectionTbox.Text;
+                thisRow["SSFXM"] = AmpmCbox.Text.Substring(0, 2);
 
-            MessageBox.Show("Recorded");
+                thisDataSet.Tables["SubjectScheduleEntry"].Rows.Add(thisRow);
+                thisAdapter.Update(thisDataSet, "SubjectScheduleEntry");
+
+                MessageBox.Show("Recorded");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred: " + ex.Message);
+            }
+            // OleDbConnection thisConnection = new OleDbConnection(connectionString);
+            // string Ole = "Select * From SubjectFile";
+            // OleDbDataAdapter thisAdapter = new OleDbDataAdapter(Ole, thisConnection);
+            //OleDbCommandBuilder thisBuilder = new OleDbCommandBuilder(thisAdapter);
+            // DataSet thisDataSet = new DataSet();
+            // thisAdapter.Fill(thisDataSet, "SubjectFile");
+
+            // DataRow thisRow = thisDataSet.Tables["SubjectFile"].NewRow();
+            //thisRow["SSFEDPCODE"] = EdpcodeTbox.Text;
+            //thisRow["SSFSUBJCODE"] = SubjectcodeTbox.Text;
+            //thisRow["SSFSTARTTIME"] = StarttimedateTimePicker.Text;
+            //thisRow["SSFENDTIME"] = EndtimedateTimePicker.Text;
+            //thisRow["SSFDAYS"] = DaysTbox.Text;
+            //thisRow["SSFROOM"] = RoomTbox.Text;         
+            //thisRow["SSFSECTION"] = SectionTbox.Text;
+            //thisRow["SSFXM"] = AmpmCbox.Text.Substring(0,2);
+
+
+            //thisDataSet.Tables["SubjectFile"].Rows.Add(thisRow);
+            //thisAdapter.Update(thisDataSet, "SubjectScheduleFile");
+
+            //MessageBox.Show("Recorded");
+        }
+
+       
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Menu form = new Menu();
+            form.Show();
+            this.Hide();
+        }
+
+        private void SubjectcodeTbox_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                OleDbConnection thisConnection = new OleDbConnection(connectionString);
+                thisConnection.Open();
+                OleDbCommand thisCommand = thisConnection.CreateCommand();
+
+                string sql = "SELECT * FROM SUBJECTFILE";
+                thisCommand.CommandText = sql;
+
+                OleDbDataReader thisDataReader = thisCommand.ExecuteReader();
+
+                bool found = false;
+
+                string description = "";
+
+
+                while (thisDataReader.Read())
+                {
+                    //Messagebox.show(thisDataReader["SFSUBJCODE"].ToString());
+                    if (thisDataReader["SFSUBJCODE"].ToString().Trim().ToUpper() == SubjectcodeTbox.Text.Trim().ToUpper())
+                    {
+                        found = true;
+
+                        description = thisDataReader["SFSUBJDESC"].ToString();
+
+                        break;
+                        //
+                    }
+                }
+                if (found == false)
+                    MessageBox.Show("Subject Code Not Found");
+                else
+                {
+                    DescriptionLabel.Text = description;
+
+                }
+            }
         }
     }
 }
