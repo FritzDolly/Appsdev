@@ -37,7 +37,7 @@ namespace EnrollmentSystem
             {
                 connection.Open();
 
-                // Check if student is already enrolled
+                
                 string enrollmentCheckSql = "SELECT COUNT(*) FROM ENROLLMENTHEADERFILE WHERE UCASE(LTRIM(RTRIM(ENRHFSTUDID))) = @StudentID";
                 using (OleDbCommand enrollmentCheckCmd = new OleDbCommand(enrollmentCheckSql, connection))
                 {
@@ -51,7 +51,7 @@ namespace EnrollmentSystem
                     }
                 }
 
-                // Insert into ENROLLMENTHEADERFILE
+                
                 string enrollmentHeaderSql = "INSERT INTO ENROLLMENTHEADERFILE (ENRHFSTUDID, ENRHFSTUDDATEENROLL, ENRHFSTUDSCHLYR, ENRHFSTUDENCODER, ENRHFSTUDTOTALUNITS, ENRHFSTUDSTATUS) VALUES (@StudentID, @EnrollDate, @SchoolYear, @Encoder, @TotalUnits, 'EN')";
                 using (OleDbCommand enrollmentHeaderCmd = new OleDbCommand(enrollmentHeaderSql, connection))
                 {
@@ -63,7 +63,7 @@ namespace EnrollmentSystem
                     enrollmentHeaderCmd.ExecuteNonQuery();
                 }
 
-                // Insert into ENROLLMENTDETAILFILE
+                
                 foreach (DataGridViewRow row in dataGridView1.Rows)
                 {
                     if (row.Cells[1].Value != null && row.Cells[0].Value != null)
@@ -80,7 +80,7 @@ namespace EnrollmentSystem
                             enrollmentDetailCmd.ExecuteNonQuery();
                         }
 
-                        // Update class size and status in SUBJECTSCHEDULEFILE
+                        
                         UpdateSchedule(connection, edpCode);
                     }
                     else
@@ -111,10 +111,10 @@ namespace EnrollmentSystem
                             classSize = Convert.ToInt32(reader["SSFCLASSSIZE"]);
                             int maxSize = Convert.ToInt32(reader["SSFMAXSIZE"]);
 
-                            classSize++; // Increment class size
+                            classSize++; 
                             if (classSize == maxSize)
                             {
-                                // Update status to 'IN' if class is full
+                                
                                 string updateStatusSql = "UPDATE SUBJECTSCHEDULEENTRY SET SSFSTATUS = 'IN' WHERE SSFEDPCODE = @EDPCode";
                                 using (OleDbCommand updateStatusCmd = new OleDbCommand(updateStatusSql, connection))
                                 {
@@ -131,7 +131,7 @@ namespace EnrollmentSystem
                 }
             }
 
-            // Update class size
+            
             string updateClassSizeSql = "UPDATE SUBJECTSCHEDULEENTRY SET SSFCLASSSIZE = @ClassSize WHERE SSFEDPCODE = @EDPCode";
             using (OleDbCommand updateClassSizeCmd = new OleDbCommand(updateClassSizeSql, connection))
             {
@@ -221,7 +221,7 @@ namespace EnrollmentSystem
                 bool conflict = false;
                 bool closed = false;
 
-                // Fetch subject schedule
+                
                 using (OleDbConnection connection = new OleDbConnection(connectionString))
                 {
                     connection.Open();
@@ -242,10 +242,10 @@ namespace EnrollmentSystem
                     }
                 }
 
-                // Check for conflicts
+                
                 conflict = CheckForScheduleConflicts(days, start, end);
 
-                // Check if schedule is closed
+                
                 if (!conflict)
                 {
                     using (OleDbConnection connection = new OleDbConnection(connectionString))

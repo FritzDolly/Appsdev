@@ -58,8 +58,9 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Century Schoolbook", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(277, 83);
+            this.label1.Location = new System.Drawing.Point(281, 54);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(613, 55);
@@ -70,7 +71,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Lucida Bright", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(25, 78);
+            this.label2.Location = new System.Drawing.Point(37, 80);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(121, 27);
@@ -81,7 +82,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Lucida Bright", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(25, 143);
+            this.label3.Location = new System.Drawing.Point(37, 143);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(158, 27);
@@ -92,7 +93,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Lucida Bright", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(7, 472);
+            this.label4.Location = new System.Drawing.Point(37, 206);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(142, 27);
@@ -103,7 +104,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Lucida Bright", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(156, 314);
+            this.label5.Location = new System.Drawing.Point(86, 368);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(109, 23);
@@ -114,7 +115,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Lucida Bright", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(526, 314);
+            this.label6.Location = new System.Drawing.Point(396, 370);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(99, 23);
@@ -125,7 +126,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Lucida Bright", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(25, 209);
+            this.label7.Location = new System.Drawing.Point(37, 268);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(68, 27);
@@ -136,7 +137,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Lucida Bright", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(564, 78);
+            this.label8.Location = new System.Drawing.Point(503, 83);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(93, 27);
@@ -147,7 +148,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Lucida Bright", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(564, 143);
+            this.label9.Location = new System.Drawing.Point(520, 146);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(76, 27);
@@ -158,7 +159,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Lucida Bright", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(565, 213);
+            this.label10.Location = new System.Drawing.Point(480, 212);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(143, 27);
@@ -168,7 +169,7 @@
             // EdpcodeTbox
             // 
             this.EdpcodeTbox.BackColor = System.Drawing.Color.Bisque;
-            this.EdpcodeTbox.Location = new System.Drawing.Point(202, 78);
+            this.EdpcodeTbox.Location = new System.Drawing.Point(209, 83);
             this.EdpcodeTbox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.EdpcodeTbox.Name = "EdpcodeTbox";
             this.EdpcodeTbox.Size = new System.Drawing.Size(207, 26);
@@ -177,7 +178,7 @@
             // SubjectcodeTbox
             // 
             this.SubjectcodeTbox.BackColor = System.Drawing.Color.Bisque;
-            this.SubjectcodeTbox.Location = new System.Drawing.Point(202, 146);
+            this.SubjectcodeTbox.Location = new System.Drawing.Point(209, 146);
             this.SubjectcodeTbox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.SubjectcodeTbox.Name = "SubjectcodeTbox";
             this.SubjectcodeTbox.Size = new System.Drawing.Size(207, 26);
@@ -190,7 +191,7 @@
             this.StarttimedateTimePicker.CalendarTitleBackColor = System.Drawing.Color.Bisque;
             this.StarttimedateTimePicker.CustomFormat = "HH:mm tt";
             this.StarttimedateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.StarttimedateTimePicker.Location = new System.Drawing.Point(295, 311);
+            this.StarttimedateTimePicker.Location = new System.Drawing.Point(209, 368);
             this.StarttimedateTimePicker.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.StarttimedateTimePicker.Name = "StarttimedateTimePicker";
             this.StarttimedateTimePicker.Size = new System.Drawing.Size(154, 26);
@@ -200,7 +201,7 @@
             // 
             this.EndtimedateTimePicker.CustomFormat = "HH:mm tt";
             this.EndtimedateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.EndtimedateTimePicker.Location = new System.Drawing.Point(648, 314);
+            this.EndtimedateTimePicker.Location = new System.Drawing.Point(508, 368);
             this.EndtimedateTimePicker.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.EndtimedateTimePicker.Name = "EndtimedateTimePicker";
             this.EndtimedateTimePicker.Size = new System.Drawing.Size(148, 26);
@@ -209,7 +210,7 @@
             // SectionTbox
             // 
             this.SectionTbox.BackColor = System.Drawing.Color.Bisque;
-            this.SectionTbox.Location = new System.Drawing.Point(744, 81);
+            this.SectionTbox.Location = new System.Drawing.Point(631, 86);
             this.SectionTbox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.SectionTbox.Name = "SectionTbox";
             this.SectionTbox.Size = new System.Drawing.Size(207, 26);
@@ -218,7 +219,7 @@
             // RoomTbox
             // 
             this.RoomTbox.BackColor = System.Drawing.Color.Bisque;
-            this.RoomTbox.Location = new System.Drawing.Point(744, 146);
+            this.RoomTbox.Location = new System.Drawing.Point(631, 147);
             this.RoomTbox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.RoomTbox.Name = "RoomTbox";
             this.RoomTbox.Size = new System.Drawing.Size(207, 26);
@@ -227,7 +228,7 @@
             // SchoolyearTbox
             // 
             this.SchoolyearTbox.BackColor = System.Drawing.Color.Bisque;
-            this.SchoolyearTbox.Location = new System.Drawing.Point(744, 213);
+            this.SchoolyearTbox.Location = new System.Drawing.Point(631, 212);
             this.SchoolyearTbox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.SchoolyearTbox.Name = "SchoolyearTbox";
             this.SchoolyearTbox.Size = new System.Drawing.Size(207, 26);
@@ -237,7 +238,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Lucida Bright", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(15, 404);
+            this.label11.Location = new System.Drawing.Point(142, 446);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(78, 23);
@@ -246,10 +247,10 @@
             // 
             // SaveButton
             // 
-            this.SaveButton.Location = new System.Drawing.Point(997, 779);
+            this.SaveButton.Location = new System.Drawing.Point(894, 754);
             this.SaveButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.SaveButton.Name = "SaveButton";
-            this.SaveButton.Size = new System.Drawing.Size(112, 35);
+            this.SaveButton.Size = new System.Drawing.Size(210, 35);
             this.SaveButton.TabIndex = 20;
             this.SaveButton.Text = "Save";
             this.SaveButton.UseVisualStyleBackColor = true;
@@ -262,16 +263,16 @@
             this.AmpmCbox.Items.AddRange(new object[] {
             "AM",
             "PM"});
-            this.AmpmCbox.Location = new System.Drawing.Point(121, 404);
+            this.AmpmCbox.Location = new System.Drawing.Point(253, 441);
             this.AmpmCbox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.AmpmCbox.Name = "AmpmCbox";
-            this.AmpmCbox.Size = new System.Drawing.Size(180, 28);
+            this.AmpmCbox.Size = new System.Drawing.Size(143, 28);
             this.AmpmCbox.TabIndex = 21;
             // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Bisque;
-            this.button1.Location = new System.Drawing.Point(870, 471);
+            this.button1.Location = new System.Drawing.Point(749, 446);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(123, 35);
             this.button1.TabIndex = 22;
@@ -281,7 +282,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.Pink;
+            this.groupBox1.BackColor = System.Drawing.Color.DarkGoldenrod;
             this.groupBox1.Controls.Add(this.DescriptionLabel);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.label2);
@@ -303,9 +304,9 @@
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Location = new System.Drawing.Point(49, 206);
+            this.groupBox1.Location = new System.Drawing.Point(145, 159);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1014, 519);
+            this.groupBox1.Size = new System.Drawing.Size(913, 519);
             this.groupBox1.TabIndex = 23;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
@@ -314,7 +315,7 @@
             // 
             this.DescriptionLabel.BackColor = System.Drawing.Color.White;
             this.DescriptionLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.DescriptionLabel.Location = new System.Drawing.Point(202, 472);
+            this.DescriptionLabel.Location = new System.Drawing.Point(209, 211);
             this.DescriptionLabel.Name = "DescriptionLabel";
             this.DescriptionLabel.Size = new System.Drawing.Size(207, 27);
             this.DescriptionLabel.TabIndex = 22;
@@ -322,7 +323,7 @@
             // DaysTbox
             // 
             this.DaysTbox.BackColor = System.Drawing.Color.Bisque;
-            this.DaysTbox.Location = new System.Drawing.Point(202, 209);
+            this.DaysTbox.Location = new System.Drawing.Point(209, 268);
             this.DaysTbox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.DaysTbox.Name = "DaysTbox";
             this.DaysTbox.Size = new System.Drawing.Size(207, 26);
@@ -333,6 +334,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightCoral;
+            this.BackgroundImage = global::EnrollmentSystem.Properties.Resources._1066264_vertical_crazy_cool_backgrounds_1920x1200_for_full_hd;
             this.ClientSize = new System.Drawing.Size(1122, 828);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.SaveButton);

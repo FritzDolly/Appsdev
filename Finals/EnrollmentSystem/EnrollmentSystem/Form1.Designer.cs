@@ -44,6 +44,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.SubjectDataGridView = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,7 +57,6 @@
             this.label9 = new System.Windows.Forms.Label();
             this.SaveButton = new System.Windows.Forms.Button();
             this.CancelButton = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.Information.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -65,7 +65,7 @@
             // 
             // Information
             // 
-            this.Information.BackColor = System.Drawing.Color.Pink;
+            this.Information.BackColor = System.Drawing.Color.DarkGoldenrod;
             this.Information.Controls.Add(this.CategoryCbox);
             this.Information.Controls.Add(this.CurriculumYearTbox);
             this.Information.Controls.Add(this.CourseCbox);
@@ -96,7 +96,7 @@
             this.CategoryCbox.Items.AddRange(new object[] {
             "Lab",
             "Lec"});
-            this.CategoryCbox.Location = new System.Drawing.Point(212, 298);
+            this.CategoryCbox.Location = new System.Drawing.Point(252, 308);
             this.CategoryCbox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.CategoryCbox.Name = "CategoryCbox";
             this.CategoryCbox.Size = new System.Drawing.Size(180, 28);
@@ -105,7 +105,7 @@
             // CurriculumYearTbox
             // 
             this.CurriculumYearTbox.BackColor = System.Drawing.Color.Bisque;
-            this.CurriculumYearTbox.Location = new System.Drawing.Point(212, 417);
+            this.CurriculumYearTbox.Location = new System.Drawing.Point(252, 416);
             this.CurriculumYearTbox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.CurriculumYearTbox.Name = "CurriculumYearTbox";
             this.CurriculumYearTbox.Size = new System.Drawing.Size(148, 26);
@@ -126,7 +126,7 @@
             "BSIT",
             "BSIS",
             "ACT"});
-            this.CourseCbox.Location = new System.Drawing.Point(212, 362);
+            this.CourseCbox.Location = new System.Drawing.Point(252, 360);
             this.CourseCbox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.CourseCbox.Name = "CourseCbox";
             this.CourseCbox.Size = new System.Drawing.Size(180, 28);
@@ -140,7 +140,7 @@
             "1",
             "2",
             "3"});
-            this.OfferingCbox.Location = new System.Drawing.Point(212, 237);
+            this.OfferingCbox.Location = new System.Drawing.Point(252, 240);
             this.OfferingCbox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.OfferingCbox.Name = "OfferingCbox";
             this.OfferingCbox.Size = new System.Drawing.Size(180, 28);
@@ -149,7 +149,7 @@
             // UnitsTbox
             // 
             this.UnitsTbox.BackColor = System.Drawing.Color.LightGoldenrodYellow;
-            this.UnitsTbox.Location = new System.Drawing.Point(212, 174);
+            this.UnitsTbox.Location = new System.Drawing.Point(253, 179);
             this.UnitsTbox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.UnitsTbox.Name = "UnitsTbox";
             this.UnitsTbox.Size = new System.Drawing.Size(148, 26);
@@ -158,7 +158,7 @@
             // DescriptionTbox
             // 
             this.DescriptionTbox.BackColor = System.Drawing.Color.LightGoldenrodYellow;
-            this.DescriptionTbox.Location = new System.Drawing.Point(212, 120);
+            this.DescriptionTbox.Location = new System.Drawing.Point(253, 125);
             this.DescriptionTbox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.DescriptionTbox.Name = "DescriptionTbox";
             this.DescriptionTbox.Size = new System.Drawing.Size(148, 26);
@@ -167,7 +167,7 @@
             // SubjectcodeTbox
             // 
             this.SubjectcodeTbox.BackColor = System.Drawing.Color.LightGoldenrodYellow;
-            this.SubjectcodeTbox.Location = new System.Drawing.Point(212, 57);
+            this.SubjectcodeTbox.Location = new System.Drawing.Point(253, 65);
             this.SubjectcodeTbox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.SubjectcodeTbox.Name = "SubjectcodeTbox";
             this.SubjectcodeTbox.Size = new System.Drawing.Size(148, 26);
@@ -176,6 +176,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Bisque;
             this.label8.Font = new System.Drawing.Font("Lucida Bright", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(30, 420);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -187,6 +188,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Bisque;
             this.label7.Font = new System.Drawing.Font("Lucida Bright", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(30, 365);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -198,6 +200,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Bisque;
             this.label6.Font = new System.Drawing.Font("Lucida Bright", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(30, 308);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -209,6 +212,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Bisque;
             this.label5.Font = new System.Drawing.Font("Lucida Bright", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(30, 240);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -220,6 +224,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Bisque;
             this.label4.Font = new System.Drawing.Font("Lucida Bright", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(30, 182);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -231,6 +236,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Bisque;
             this.label3.Font = new System.Drawing.Font("Lucida Bright", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(30, 128);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -242,6 +248,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Bisque;
             this.label2.Font = new System.Drawing.Font("Lucida Bright", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(30, 65);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -252,7 +259,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.BackColor = System.Drawing.Color.Pink;
+            this.groupBox2.BackColor = System.Drawing.Color.DarkGoldenrod;
             this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Controls.Add(this.SubjectDataGridView);
             this.groupBox2.Controls.Add(this.ScodeTbox);
@@ -267,6 +274,17 @@
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Requisite Information";
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Bisque;
+            this.button1.Location = new System.Drawing.Point(597, 320);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(120, 34);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Menu";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // SubjectDataGridView
             // 
@@ -325,6 +343,7 @@
             // CoRb
             // 
             this.CoRb.AutoSize = true;
+            this.CoRb.BackColor = System.Drawing.Color.Bisque;
             this.CoRb.Location = new System.Drawing.Point(480, 94);
             this.CoRb.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.CoRb.Name = "CoRb";
@@ -332,11 +351,12 @@
             this.CoRb.TabIndex = 2;
             this.CoRb.TabStop = true;
             this.CoRb.Text = "Co-requisite";
-            this.CoRb.UseVisualStyleBackColor = true;
+            this.CoRb.UseVisualStyleBackColor = false;
             // 
             // PreRb
             // 
             this.PreRb.AutoSize = true;
+            this.PreRb.BackColor = System.Drawing.Color.Bisque;
             this.PreRb.Location = new System.Drawing.Point(476, 58);
             this.PreRb.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.PreRb.Name = "PreRb";
@@ -344,11 +364,12 @@
             this.PreRb.TabIndex = 1;
             this.PreRb.TabStop = true;
             this.PreRb.Text = "Pre-requisite";
-            this.PreRb.UseVisualStyleBackColor = true;
+            this.PreRb.UseVisualStyleBackColor = false;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Bisque;
             this.label1.Location = new System.Drawing.Point(106, 80);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
@@ -359,6 +380,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Century Schoolbook", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(446, 63);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -390,24 +412,14 @@
             this.CancelButton.UseVisualStyleBackColor = true;
             this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Bisque;
-            this.button1.Location = new System.Drawing.Point(597, 320);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(120, 34);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Menu";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Lucida Calligraphy", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(756, 305);
+            this.label10.BackColor = System.Drawing.Color.Transparent;
+            this.label10.Font = new System.Drawing.Font("Lucida Calligraphy", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(730, 293);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(396, 41);
+            this.label10.Size = new System.Drawing.Size(417, 41);
             this.label10.TabIndex = 6;
             this.label10.Text = "Requisite Information";
             // 
@@ -416,7 +428,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightCoral;
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.BackgroundImage = global::EnrollmentSystem.Properties.Resources._1066264_vertical_crazy_cool_backgrounds_1920x1200_for_full_hd;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1402, 852);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.CancelButton);

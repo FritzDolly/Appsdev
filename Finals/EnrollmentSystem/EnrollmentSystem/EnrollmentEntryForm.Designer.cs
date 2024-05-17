@@ -50,14 +50,12 @@
             this.SButton = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.EdpTbox = new System.Windows.Forms.TextBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.Hello = new System.Windows.Forms.GroupBox();
             this.label7 = new System.Windows.Forms.Label();
             this.UnitsLabel = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.Hello.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -66,7 +64,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Century Schoolbook", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.label1.Location = new System.Drawing.Point(156, 59);
+            this.label1.Location = new System.Drawing.Point(336, 28);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(555, 57);
@@ -266,7 +264,7 @@
             // SButton
             // 
             this.SButton.BackColor = System.Drawing.Color.Bisque;
-            this.SButton.Location = new System.Drawing.Point(1014, 573);
+            this.SButton.Location = new System.Drawing.Point(1062, 641);
             this.SButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.SButton.Name = "SButton";
             this.SButton.Size = new System.Drawing.Size(162, 35);
@@ -298,36 +296,16 @@
             this.EdpTbox.TabIndex = 5;
             this.EdpTbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EdpTbox_KeyPress);
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::EnrollmentSystem.Properties.Resources.images__2_;
-            this.pictureBox2.Location = new System.Drawing.Point(6, 25);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(225, 418);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox2.TabIndex = 7;
-            this.pictureBox2.TabStop = false;
-            // 
-            // Hello
-            // 
-            this.Hello.BackColor = System.Drawing.Color.Bisque;
-            this.Hello.Controls.Add(this.pictureBox2);
-            this.Hello.Location = new System.Drawing.Point(987, 59);
-            this.Hello.Name = "Hello";
-            this.Hello.Size = new System.Drawing.Size(237, 409);
-            this.Hello.TabIndex = 8;
-            this.Hello.TabStop = false;
-            this.Hello.Text = "H";
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Bisque;
             this.label7.Font = new System.Drawing.Font("Lucida Bright", 12F, System.Drawing.FontStyle.Italic);
             this.label7.Location = new System.Drawing.Point(685, 640);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(79, 27);
+            this.label7.Size = new System.Drawing.Size(71, 27);
             this.label7.TabIndex = 9;
-            this.label7.Text = "label7";
+            this.label7.Text = "Units";
             // 
             // UnitsLabel
             // 
@@ -335,8 +313,17 @@
             this.UnitsLabel.Location = new System.Drawing.Point(771, 641);
             this.UnitsLabel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.UnitsLabel.Name = "UnitsLabel";
-            this.UnitsLabel.Size = new System.Drawing.Size(70, 26);
+            this.UnitsLabel.Size = new System.Drawing.Size(81, 26);
             this.UnitsLabel.TabIndex = 10;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::EnrollmentSystem.Properties.Resources.images__5_;
+            this.pictureBox1.Location = new System.Drawing.Point(1080, 97);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(228, 225);
+            this.pictureBox1.TabIndex = 11;
+            this.pictureBox1.TabStop = false;
             // 
             // EnrollmentEntryForm
             // 
@@ -346,9 +333,9 @@
             this.BackgroundImage = global::EnrollmentSystem.Properties.Resources.purdue_university_west_lafayette_indiana_arch;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1351, 896);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.UnitsLabel);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.Hello);
             this.Controls.Add(this.EdpTbox);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.SButton);
@@ -361,8 +348,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.Hello.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -392,9 +378,8 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox EdpTbox;
         private System.Windows.Forms.Button MenuButton;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.GroupBox Hello;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox UnitsLabel;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

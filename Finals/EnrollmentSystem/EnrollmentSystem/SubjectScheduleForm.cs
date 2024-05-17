@@ -22,18 +22,18 @@ namespace EnrollmentSystem
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
-            // Validate EdpcodeTbox to ensure it contains only numbers
+            
             if (!System.Text.RegularExpressions.Regex.IsMatch(EdpcodeTbox.Text, @"^\d+$"))
             {
                 MessageBox.Show("Please enter numbers only in the EDP Code field");
-                return; // Exit the method if validation fails
+                return; 
             }
 
-            // Validate RoomTbox to ensure it contains only numbers
+            
             if (!System.Text.RegularExpressions.Regex.IsMatch(RoomTbox.Text, @"^\d+$"))
             {
                 MessageBox.Show("Please enter numbers only in the Room field");
-                return; // Exit the method if validation fails
+                return; 
             }
 
             try
@@ -64,28 +64,7 @@ namespace EnrollmentSystem
             {
                 MessageBox.Show("An error occurred: " + ex.Message);
             }
-            // OleDbConnection thisConnection = new OleDbConnection(connectionString);
-            // string Ole = "Select * From SubjectFile";
-            // OleDbDataAdapter thisAdapter = new OleDbDataAdapter(Ole, thisConnection);
-            //OleDbCommandBuilder thisBuilder = new OleDbCommandBuilder(thisAdapter);
-            // DataSet thisDataSet = new DataSet();
-            // thisAdapter.Fill(thisDataSet, "SubjectFile");
-
-            // DataRow thisRow = thisDataSet.Tables["SubjectFile"].NewRow();
-            //thisRow["SSFEDPCODE"] = EdpcodeTbox.Text;
-            //thisRow["SSFSUBJCODE"] = SubjectcodeTbox.Text;
-            //thisRow["SSFSTARTTIME"] = StarttimedateTimePicker.Text;
-            //thisRow["SSFENDTIME"] = EndtimedateTimePicker.Text;
-            //thisRow["SSFDAYS"] = DaysTbox.Text;
-            //thisRow["SSFROOM"] = RoomTbox.Text;         
-            //thisRow["SSFSECTION"] = SectionTbox.Text;
-            //thisRow["SSFXM"] = AmpmCbox.Text.Substring(0,2);
-
-
-            //thisDataSet.Tables["SubjectFile"].Rows.Add(thisRow);
-            //thisAdapter.Update(thisDataSet, "SubjectScheduleFile");
-
-            //MessageBox.Show("Recorded");
+            
         }
 
        
@@ -117,7 +96,7 @@ namespace EnrollmentSystem
 
                 while (thisDataReader.Read())
                 {
-                    //Messagebox.show(thisDataReader["SFSUBJCODE"].ToString());
+                    
                     if (thisDataReader["SFSUBJCODE"].ToString().Trim().ToUpper() == SubjectcodeTbox.Text.Trim().ToUpper())
                     {
                         found = true;

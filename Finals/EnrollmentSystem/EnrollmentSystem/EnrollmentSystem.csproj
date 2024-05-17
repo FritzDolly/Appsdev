@@ -125,5 +125,23 @@
   <ItemGroup>
     <None Include="Resources\images %282%29.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\6c997ca378298e7cc0162ba325659673.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\realistic-black-shimmer-background-design-template-698924f2522e2d08fbfa9302b5d44610_screen.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images %284%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images %283%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1066264-vertical-crazy-cool-backgrounds-1920x1200-for-full-hd.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images %285%29.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
